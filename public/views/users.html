@@ -1,0 +1,98 @@
+
+<div class="users">
+  <h2 class="page-header">All Users</h2>
+  <div class="table-responsive">
+	<table class="table table-striped table-bordered">
+	  <thead>
+		<tr class="success">
+		  <th>#</th>
+		  <th>Users Name</th>
+		  <th>Domain</th>
+		  <th>Expire</th>
+		  <th></th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr ng-repeat="user in userAs.users">
+		  <td>{{$index + 1}}</td>
+		  <td>{{user.firstName}}</td>
+		  <td>{{user.domain}}</td>
+		  <td>{{user.currentExpirationYear}}</td>
+		  <td><button type="button" data-toggle="modal" data-target="#myModal" 
+		  ng-click="userAs.userView(user)" 
+		  class="btn btn-primary">View</button></td>
+		</tr>
+	  </tbody>
+	</table>
+  </div>
+</div>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">User Detail</h4>
+      </div>
+      <div class="modal-body">
+  <div class="table-responsive">
+	<table class="table table-striped table-bordered">
+	  <thead>
+		<tr class="success">
+		  <th>Labels</th>
+		  <th>Details</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr>
+		  <td>First name</td>
+		  <td>{{userAs.user.firstName}}</td>
+		</tr>
+		<tr>
+		  <td>Last name</td>
+		  <td>{{userAs.user.lastName}}</td>
+		</tr>
+		<tr>
+		  <td>Email</td>
+		  <td>{{userAs.user.email}}</td>
+		</tr>
+		<tr>
+		  <td>CompanyName</td>
+		  <td>{{userAs.user.companyName}}</td>
+		</tr>
+		<tr>
+		  <td>Phone number</td>
+		  <td>{{userAs.user.phoneNumber}}</td>
+		</tr>
+		<tr>
+		  <td>ZipCode</td>
+		  <td>{{userAs.user.zipCode}}</td>
+		</tr>
+		<tr>
+		  <td>Domain</td>
+		  <td>{{userAs.user.domain}}</td>
+		</tr>
+		<tr>
+		  <td>Reg_type</td>
+		  <td>{{userAs.user.reg_type}}</td>
+		</tr>
+		<tr>
+		  <td>Reg_username</td>
+		  <td>{{userAs.user.reg_username}}</td>
+		</tr>
+		<tr>
+		  <td>Current expiration Year</td>
+		  <td>{{userAs.user.currentExpirationYear}}</td>
+		</tr>
+	  </tbody>
+	</table>
+  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
